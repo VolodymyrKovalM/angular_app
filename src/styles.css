@@ -1,1 +1,62 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	position: relative;
+	font-family: Arial, sans-serif;
+}
+
+button {
+	cursor: pointer;
+}
+
+ul {
+	list-style: none;
+}
+
+.container {
+	max-width: 1920px;
+	margin: 0 auto;
+}
+
+.container > div {
+  height: 100vh;
+}
+
+.overlay {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	background: rgba(255, 255, 255, 0.7);
+}
+
+.overlay.small-preloader {
+  width: 300px;
+  height: auto;
+  position: static;
+}
+
+.overlay.small-preloader .preloader {
+  width: 100px;
+}
+
+.overlay.github-small-preloader,
+.overlay.github-error {
+  height: auto;
+}
+
+.overlay.github-error {
+  flex-direction: column;
+  background: #FFF;
+}

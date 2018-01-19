@@ -1,0 +1,65 @@
+.info-container {
+	max-width: 1450px;
+	padding: 20px;
+	margin: 0 auto;
+	background: #FFF;
+	border-radius: 20px;
+}
+
+.info-title {
+	padding-bottom: 15px;
+	margin-bottom: 25px;
+	border-bottom: 1px solid #FF4067;
+	text-align: center;
+}
+
+.hero-info {
+	display: flex;
+	justify-content: space-around;
+}
+
+.hero-info > div,
+.hero-info ul {
+  width: 250px;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.hero-info > ul {
+  width: 300px;
+}
+
+.hero-avatar {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.info-cell {
+	display: block;
+	margin-bottom: 15px;
+}
+
+.control-buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.control-buttons button {
+  width: 110px;
+  padding: 10px 0;
+  color: #333;
+  background: #FFF;
+  border: 2px solid #FF4067;
+  text-align: center;
+  transition: background-color 0.2s ease-in;
+  cursor: pointer;
+}
+
+.control-buttons button:hover {
+  color: #FFF;
+  background: #FF4067;
+}
+
+.control-buttons button:disabled {
+  border-color: #CCC;
+}

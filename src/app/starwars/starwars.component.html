@@ -1,0 +1,28 @@
+<app-preloader *ngIf="isFetching" class="overlay"></app-preloader>
+<div *ngIf="herosInCurrentPage" class="info-container">
+  <h1 class="info-title">Star Wars Heroes</h1>
+  <div class="hero-info">
+    <div>
+      <img class="hero-avatar" [src]="avatars[0]" alt="Avatar" />
+      <div class="control-buttons">
+        <button
+          (click) = "onPrevButtonClick()"
+          [disabled]="currentIndex === 0 && !pagesData.previous"
+        >
+          Prev
+        </button>
+        <button (click) = "onNextButtonClick()">Next</button>
+      </div>
+    </div>
+    <div>
+      <span class="info-cell">Name: {{herosInCurrentPage[currentIndex].name}}</span>
+      <span class="info-cell">Height: {{herosInCurrentPage[currentIndex].height}} m</span>
+      <span class="info-cell">Mass: {{herosInCurrentPage[currentIndex].mass}} kg</span>
+      <span class="info-cell">Hair Color: {{herosInCurrentPage[currentIndex].hair_color}}</span>
+      <span class="info-cell">Skin Color: {{herosInCurrentPage[currentIndex].skin_color}}</span>
+      <span class="info-cell">Eye Color: {{herosInCurrentPage[currentIndex].eye_color}}</span>
+      <span class="info-cell">Birth Year: {{herosInCurrentPage[currentIndex].birth_year}}</span>
+      <span class="info-cell">Gender: {{herosInCurrentPage[currentIndex].gender}}</span>
+    </div>
+  </div>
+</div>
