@@ -7,17 +7,21 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { StarwarsComponent } from './starwars/starwars.component';
 import { GithubComponent } from './github/github.component';
+import { GithubFormComponent } from './github/githubform/githubForm.component';
 import { PreloaderComponent } from './preloader/preloader.component';
 
 import { StarwarsService } from './services/starwars.service';
-
+import { GithubService } from './services/github.service';
+import { GithubpreloaderComponent } from './githubpreloader/githubpreloader.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     StarwarsComponent,
     GithubComponent,
-    PreloaderComponent
+    GithubFormComponent,
+    PreloaderComponent,
+    GithubpreloaderComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +29,7 @@ import { StarwarsService } from './services/starwars.service';
     HttpClientModule,
     AngularSvgIconModule
   ],
-  providers: [ StarwarsService ],
+  providers: [ StarwarsService, GithubService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

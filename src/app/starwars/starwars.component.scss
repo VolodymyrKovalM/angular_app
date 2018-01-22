@@ -44,22 +44,24 @@
 	justify-content: space-between;
 }
 
-.control-buttons button {
-  width: 110px;
-  padding: 10px 0;
-  color: #333;
-  background: #FFF;
-  border: 2px solid #FF4067;
-  text-align: center;
-  transition: background-color 0.2s ease-in;
-  cursor: pointer;
-}
+.control-buttons {
+  button {
+    width: 110px;
+    padding: 10px 0;
+    color: #333;
+    background: #FFF;
+    border: 2px solid #FF4067;
+    text-align: center;
+    transition: background-color 0.2s ease-in;
+    cursor: pointer;
 
-.control-buttons button:hover {
-  color: #FFF;
-  background: #FF4067;
-}
+    &:hover {
+      color: #FFF;
+      background: #FF4067;
+    }
 
-.control-buttons button:disabled {
-  border-color: #CCC;
+    &:disabled {
+      border-color: #CCC;
+    }
+  }
 }

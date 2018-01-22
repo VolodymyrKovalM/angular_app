@@ -1,13 +1,13 @@
-<app-preloader *ngIf="isFetching" class="overlay"></app-preloader>
-<div *ngIf="herosInCurrentPage" class="info-container">
+<app-preloader *ngIf="swService.isFetching" class="overlay"></app-preloader>
+<div *ngIf="!swService.isFetching && swService.currentPage" class="info-container">
   <h1 class="info-title">Star Wars Heroes</h1>
   <div class="hero-info">
     <div>
-      <img class="hero-avatar" [src]="avatars[0]" alt="Avatar" />
+      <img class="hero-avatar" [src]="swService.avatars[swService.currentIndex]" alt="Avatar" />
       <div class="control-buttons">
         <button
           (click) = "onPrevButtonClick()"
-          [disabled]="currentIndex === 0 && !pagesData.previous"
+          [disabled]="swService.currentIndex === 0 && !swService.pagesData.previous"
         >
           Prev
         </button>
@@ -15,14 +15,20 @@
       </div>
     </div>
     <div>
-      <span class="info-cell">Name: {{herosInCurrentPage[currentIndex].name}}</span>
-      <span class="info-cell">Height: {{herosInCurrentPage[currentIndex].height}} m</span>
-      <span class="info-cell">Mass: {{herosInCurrentPage[currentIndex].mass}} kg</span>
-      <span class="info-cell">Hair Color: {{herosInCurrentPage[currentIndex].hair_color}}</span>
-      <span class="info-cell">Skin Color: {{herosInCurrentPage[currentIndex].skin_color}}</span>
-      <span class="info-cell">Eye Color: {{herosInCurrentPage[currentIndex].eye_color}}</span>
-      <span class="info-cell">Birth Year: {{herosInCurrentPage[currentIndex].birth_year}}</span>
-      <span class="info-cell">Gender: {{herosInCurrentPage[currentIndex].gender}}</span>
+      <span class="info-cell">Name: {{swService.currentPage[swService.currentIndex].name}}</span>
+      <span class="info-cell">Height: {{swService.currentPage[swService.currentIndex].height}} m</span>
+      <span class="info-cell">Mass: {{swService.currentPage[swService.currentIndex].mass}} kg</span>
+      <span class="info-cell">Hair Color: {{swService.currentPage[swService.currentIndex].hair_color}}</span>
+      <span class="info-cell">Skin Color: {{swService.currentPage[swService.currentIndex].skin_color}}</span>
+      <span class="info-cell">Eye Color: {{swService.currentPage[swService.currentIndex].eye_color}}</span>
+      <span class="info-cell">Birth Year: {{swService.currentPage[swService.currentIndex].birth_year}}</span>
+      <span class="info-cell">Gender: {{swService.currentPage[swService.currentIndex].gender}}</span>
     </div>
+    <app-preloader *ngIf="swService.isFetchingFilms" class="overlay small-preloader"></app-preloader>
+    <ul *ngIf="!swService.isFetchingFilms && swService.films">
+      <li *ngFor="let film of swService.films" class="info-cell">
+        Episode {{film.episode_id}}: {{film.title}}
+      </li>
+    </ul>
   </div>
 </div>
