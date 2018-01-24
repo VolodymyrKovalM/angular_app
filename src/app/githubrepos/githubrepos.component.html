@@ -1,0 +1,23 @@
+<app-githubpreloader *ngIf="reposService.isFetching; else reposData" class="overlay"></app-githubpreloader>
+<ng-template #reposData>
+  <div class="repos-page-container">
+    <a routerLink="/github">
+      <svg-icon class="back-btn" src="svg/back.svg"></svg-icon>
+    </a>
+    <div class="user">
+      <div class="user-name">{{reposService.userData.login}} repositories</div>
+      <img class="user-avatar" src="{{reposService.userData.avatar_url}}" alt="{{reposService.userData.login}}" />
+    </div>
+    <ul class="repos-list">
+      <li *ngFor="let repo of reposService.repos" class="repo">
+        <a href="{{repo.html_url}}" class="repo-link" target="_blank"></a>
+    		<div class="repo-name">{{repo.name}}</div>
+    		<div class="repo-lang">{{repo.language}}</div>
+    		<div class="repo-stars">
+          <svg-icon src="svg/star.svg"></svg-icon>
+    			{{repo.stargazers_count}}
+    		</div>
+      </li>
+    </ul>
+  </div>
+</ng-template>

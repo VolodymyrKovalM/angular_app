@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { AngularSvgIconModule } from 'angular-svg-icon';
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,8 @@ import { PreloaderComponent } from './preloader/preloader.component';
 import { StarwarsService } from './services/starwars.service';
 import { GithubService } from './services/github.service';
 import { GithubpreloaderComponent } from './githubpreloader/githubpreloader.component';
+import { GithubuserComponent } from './githubuser/githubuser.component';
+import { GithubreposComponent } from './githubrepos/githubrepos.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +24,15 @@ import { GithubpreloaderComponent } from './githubpreloader/githubpreloader.comp
     GithubComponent,
     GithubFormComponent,
     PreloaderComponent,
-    GithubpreloaderComponent
+    GithubpreloaderComponent,
+    GithubuserComponent,
+    GithubreposComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     AngularSvgIconModule
   ],
   providers: [ StarwarsService, GithubService ],

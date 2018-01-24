@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GithubService } from '../../services/github.service';
 
 @Component({
   selector: 'app-github-form',
@@ -7,10 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class GithubFormComponent implements OnInit {
   @Input() user: any;
-  constructor() { }
+  @Input() userNumber: string;
+  constructor(private gitService: GithubService) { }
 
   ngOnInit() {
-    console.log(user);
   }
 
+  onSubmit(userNumber) {
+    this.gitService.fetchUser(userNumber);
+  }
 }

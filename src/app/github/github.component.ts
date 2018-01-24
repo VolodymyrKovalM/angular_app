@@ -16,4 +16,8 @@ export class GithubComponent implements OnInit {
     console.log(this.gitService);
   }
 
+  logChange() {
+    console.log(this);
+  }
+
 }

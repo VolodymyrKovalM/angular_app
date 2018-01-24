@@ -1,0 +1,13 @@
+<div class="user">
+  <div class="user-name">{{user.data.login}}</div>
+  <img class="user-avatar" src="{{user.data.avatar_url}}" alt={{user.data.login}} />
+  <div class="user-btns">
+    <button
+      (click) = "resetUser(userNumber)"
+      class="btn"
+    >
+      Reset
+    </button>
+    <a routerLink="/github/repos/{{user.data.login}}" class="btn">Look repos</a>
+  </div>
+</div>

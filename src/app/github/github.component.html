@@ -1,4 +1,24 @@
 <div class="forms-container">
-  <app-github-form [user] = "gitService.userOne"></app-github-form>
-  <app-github-form [user] = "gitService.userTwo"></app-github-form>
+  <app-githubuser
+    *ngIf="gitService.users.userOne.data; else formOne"
+    [user] = "gitService.users.userOne"
+    userNumber="userOne"
+  ></app-githubuser>
+  <ng-template #formOne>
+    <app-github-form
+      [user] = "gitService.users.userOne"
+      userNumber="userOne"
+    ></app-github-form>
+  </ng-template>
+  <app-githubuser
+    *ngIf="gitService.users.userTwo.data; else formTwo"
+    [user] = "gitService.users.userTwo"
+    userNumber="userTwo"
+  ></app-githubuser>
+  <ng-template #formTwo>
+    <app-github-form
+      [user] = "gitService.users.userTwo"
+      userNumber="userTwo"
+    ></app-github-form>
+  </ng-template>
 </div>

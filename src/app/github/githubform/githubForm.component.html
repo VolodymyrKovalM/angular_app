@@ -1,4 +1,6 @@
-<form action="#" (submit)="onSubmit()" class="user-search-form">
-  <input [(ngModel)] = "user.name" placeholder="Enter github user name">
+<form action="#" (submit)="onSubmit(userNumber)" class="user-search-form">
+  <app-githubpreloader *ngIf="user.isFetching" class="overlay github-small-preloader"></app-githubpreloader>
+  <input [(ngModel)]="user.name" name="name" placeholder="Enter github user name">
   <button type="submit" class="btn">Search</button>
+  <p>{{user.data}}</p>
 </form>
